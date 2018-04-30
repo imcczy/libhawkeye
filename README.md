@@ -1,6 +1,5 @@
 # LibHawkeye
-LibHawkeye is a fast and precise analysis tool to detect third-party libraries in Android based on [WALA](https://github.com/wala/WALA) and [LibSout](https://github.com/reddr/LibScout).
-
+LibHawkeye is a fast and precise analysis tool to detect third-party libraries in Android based on [WALA](https://github.com/wala/WALA).
 ## basic usage
 
 ```
