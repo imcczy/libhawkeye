@@ -1,0 +1,43 @@
+<configuration>
+	<!-- WALA dex frontend -->
+	<logger name="com.ibm.wala.dalvik" level="off"/>
+
+	<!-- LibScout log config -->
+	<logger name="com.imcczy.libds.ApkHandler" level="debug"/>
+	<logger name="com.imcczy.libds.LibFactory" level="debug"/>
+	<logger name="com.imcczy.libds.match.Identifier" level="info"/>
+	<logger name="com.imcczy.libds.LibHandler" level="info"/>
+	<logger name="com.imcczy.libds.signature.HashTree" level="off"/>
+    <logger name="com.imcczy.libds.graph.ConnectedComponent" level="off"/>
+	<logger name="com.imcczy.libds.utils.WalaUtils" level="off"/>
+	<logger name="com.imcczy.libds.profile.Profile" level="off"/>
+	<logger name="com.imcczy.libds.pkg.NodeHashTree" level="off"/>
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss} %-5level %-25logger{0} : %msg%n</pattern>
+			<!--<pattern>%d{HH:mm:ss} %-5level %-25logger{0} : %msg%n</pattern>-->
+		</encoder>
+	</appender>
+
+	<appender name="FILE" class="ch.qos.logback.classic.sift.SiftingAppender">
+		<discriminator>
+			<key>appPath</key>
+			<defaultValue>./defaultApp</defaultValue>
+		</discriminator>
+		<sift>
+			<appender name="${appPath}" class="ch.qos.logback.core.FileAppender">
+				<file>${appPath}.log</file>
+				<append>false</append>
+				<layout class="ch.qos.logback.classic.PatternLayout">
+					<pattern>%d{HH:mm:ss} %-5level %-25logger{0} : %msg%n</pattern>
+				</layout>
+			</appender>
+		</sift>
+	</appender>
+
+
+	<root level="info">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
+	</root>
+</configuration>
