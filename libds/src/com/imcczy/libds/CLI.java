@@ -176,7 +176,7 @@ public class CLI {
                 .argName("value")
                 .required(true)
                 .longOpt("opmode")
-                .desc("mode of operation, one of [profile|match|db]")
+                .desc("mode of operation, one of [PARSE|CLUSTER|MATCH]")
                 .hasArg()
                 .build());
 
@@ -208,7 +208,7 @@ public class CLI {
                 .argName("value")
                 .required(false)
                 .longOpt("runmode")
-                .desc("the run mode default serial(parallel)")
+                .desc("the run mode default serial(or parallel)")
                 .hasArg()
                 .build());
 
