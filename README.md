@@ -1,5 +1,5 @@
-# libds
-Libds is a fast and precise analysis tool to detect third-party libraries in Android.
+# LibHawkeye
+LibHawkeye is a fast and precise analysis tool to detect third-party libraries in Android.
 
 ## Getting Started
 
